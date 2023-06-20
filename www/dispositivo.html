@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Device Info</title>
+    <script src="cordova.js"></script>
+</head>
+
+<body>
+    <h1>informacion del dispositivo</h1>
+    <div id="deviceInfo"></div>
+
+    <script>
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+            var model = device.model;
+            var platform = device.platform;
+            var version = device.version;
+            var uuid = device.uuid;
+
+            var content = "<p>Modelo: " + model + "</p>";
+            content += "<p>Plataforma: " + platform + "</p>";
+            content += "<p>Versión: " + version + "</p>";
+            content += "<p>UUID: " + uuid + "</p>";
+
+            document.getElementById("deviceInfo").innerHTML = content;
+        }
+    </script>
+</body>
+
+</html>
